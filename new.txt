@@ -1,0 +1,19 @@
+Login/Signup
+List all entries (Should have filters)
+Individual Post page (or we can just have a dynamic list of all)
+
+1. Users can Register
+2. Users can Login
+3. Post operations:
+    Add a blog Post
+    List all posts
+    Delete a post
+    update a post
+4. User can signout
+
+
+ENDPOINTS:
+1. / - Lists all posts by default. (Could have a public/private filter?) Has Sign up and Login buttons on top
+2. /Login - Login
+3. /register - Sign up
+4. /dash - Lists all posts by current author along with edit/del options. Sign out button on top

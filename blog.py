@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_PASSWORD'] = 'tester'
 app.config['MYSQL_DB'] = 'blog'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
@@ -66,7 +66,7 @@ def register():
         email = form.email.data
         password = sha256_crypt.encrypt(str(form.password.data))
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users(name, email, password) VALUES(%s, %s, %s)",
+        cur.execute("INSERT INTO authors(name, email, password) VALUES(%s, %s, %s)",
                     (name, email, password))
         mysql.connection.commit()
         cur.close()
@@ -210,6 +210,4 @@ def delete_article(id):
     return redirect(url_for('dashboard'))
 
 
-if __name__ == '__main__':
-    app.secret
-    app.run(debug=True)
+app.run(debug=True)
